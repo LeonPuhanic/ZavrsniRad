@@ -1,26 +1,21 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import NavBarEdunova from './components/NavBarEdunova'
-import { Route, Routes } from 'react-router-dom'
+import NavBarAplikacija from './components/NavBarAplikacija'
 import { RoutesNames } from './constants'
 import Pocetna from './pages/Pocetna'
-import OruzjaPregled from './pages/oruzja/OruzjaPregled'
-import OruzjaDodaj from './pages/oruzja/OruzjaDodaj'
-import OruzjaPromjena from './pages/oruzja/OruzjaPromjena'
-
+import {Routes,Route} from 'react-router'
+import OruzjePregled from './pages/Oruzja/OruzjePregled'
 
 function App() {
 
-  
+
   return (
     <>
-      <NavBarEdunova />
+      <NavBarAplikacija />
       <Routes>
         <Route path={RoutesNames.HOME} element={<Pocetna />} />
 
-        <Route path={RoutesNames.ORUZJE_PREGLED} element={<OruzjaPregled />} />
-        <Route path={RoutesNames.ORUZJE_NOVI} element={<OruzjaDodaj />} />
-        <Route path={RoutesNames.ORUZJE_PROMJENA} element={<OruzjaPromjena />} />
+        <Route path={RoutesNames.ORUZJE_PREGLED} element={<OruzjePregled />} ></Route>
       </Routes>
     </>
   )

@@ -10,6 +10,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder
+            .WithOrigins("*")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
+
 
 // baza podataka SQL
 builder.Services.AddDbContext<ZavrsnaContext>(
@@ -22,18 +32,25 @@ builder.Services.AddDbContext<ZavrsnaContext>(
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+//if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(opcije => {
+    app.UseSwaggerUI(opcije =>
+    {
         opcije.ConfigObject.AdditionalItems.Add("requestSnippetsEnabled", true);
     });
 }
 
-app.UseHttpsRedirection();
 
+
+app.UseHttpsRedirection();
+app.UseCors("AllowSpecificOrigin");
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseStaticFiles();
+app.UseDefaultFiles();
+app.MapFallbackToFile("index.html");
 
 app.Run();

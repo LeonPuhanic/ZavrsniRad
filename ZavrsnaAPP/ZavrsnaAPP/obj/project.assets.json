@@ -3171,11 +3171,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Leki\\Documents\\GitHub\\ZavrsnaAPP\\ZavrsnaAPP\\ZavrsnaAPP.csproj",
+      "projectUniqueName": "C:\\Users\\Leki\\Documents\\GitHub\\ZavrsnaAPP\\ZavrsnaAPP\\ZavrsnaAPP\\ZavrsnaAPP.csproj",
       "projectName": "ZavrsnaAPP",
-      "projectPath": "C:\\Users\\Leki\\Documents\\GitHub\\ZavrsnaAPP\\ZavrsnaAPP\\ZavrsnaAPP.csproj",
+      "projectPath": "C:\\Users\\Leki\\Documents\\GitHub\\ZavrsnaAPP\\ZavrsnaAPP\\ZavrsnaAPP\\ZavrsnaAPP.csproj",
       "packagesPath": "C:\\Users\\Leki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Leki\\Documents\\GitHub\\ZavrsnaAPP\\ZavrsnaAPP\\obj\\",
+      "outputPath": "C:\\Users\\Leki\\Documents\\GitHub\\ZavrsnaAPP\\ZavrsnaAPP\\ZavrsnaAPP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Leki\\AppData\\Roaming\\NuGet\\NuGet.Config",

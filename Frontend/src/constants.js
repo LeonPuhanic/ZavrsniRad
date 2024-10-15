@@ -1,7 +1,9 @@
 export const RoutesNames = {
 
     HOME: '/',
-    ORUZJE_PREGLED: '/oruzja'
+    ORUZJE_PREGLED: '/oruzja',
+    ORUZJE_NOVO: '/oruzja/dodaj',
+    ORUZJE_PROMJENA: '/oruzja/:sifra'
 
 };
 

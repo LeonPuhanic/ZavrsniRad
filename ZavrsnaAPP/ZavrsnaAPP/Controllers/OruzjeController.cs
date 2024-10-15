@@ -20,7 +20,12 @@ namespace ZavrsnaAPP.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_context.Oruzja);
+            try
+            {
+                return Ok(_context.Oruzja);
+            }
+
+            catch (Exception ex) { return BadRequest(ex.Message); }
         }
 
 
@@ -43,7 +48,7 @@ namespace ZavrsnaAPP.Controllers
 
         [HttpPut]
         [Route("{sifra:int}")]
-        [Produces("application/jscon")]
+        [Produces("application/json")]
         public IActionResult Put(int sifra, Oruzje oruzje)
         {
             var oruzjeIzBaze = _context.Oruzja.Find(sifra);
@@ -65,7 +70,7 @@ namespace ZavrsnaAPP.Controllers
 
         [HttpDelete]
         [Route("{sifra:int}")]
-        [Produces("application/jscon")]
+        [Produces("application/json")]
         public IActionResult Delete(int sifra)
         {
             var oruzjeIzBaze = _context.Oruzja.Find(sifra);

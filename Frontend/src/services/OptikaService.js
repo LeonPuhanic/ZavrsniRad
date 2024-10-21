@@ -2,7 +2,7 @@ import { HttpService } from "./HttpService"
 
 
 async function get(){
-   return await HttpService.get('/Oruzje')
+   return await HttpService.get('/Optika')
     .then((odgovor)=>{
         console.table(odgovor.data);
         return odgovor.data;
@@ -11,42 +11,42 @@ async function get(){
 }
 
 async function getBySifra(sifra){
-    return await HttpService.get('/Oruzje/' + sifra)
+    return await HttpService.get('/Optika/' + sifra)
      .then((odgovor)=>{
          return {greska: false, poruka: odgovor.data}
      })
      .catch((e)=>{
-        return {greska: true, poruka: 'Oruzje s ovom šifrom ne postoji!'}
+        return {greska: true, poruka: 'Optika s ovom šifrom ne postoji!'}
      })
  }
 
 async function obrisi(sifra) {
-    return await HttpService.delete('/Oruzje/' + sifra)
+    return await HttpService.delete('/Optika/' + sifra)
     .then((odgovor)=>{
         return {greska: false, poruka: odgovor.data.poruka}
     })
     .catch((e)=>{
-        return {greska: true, poruka: 'Oruzje se ne može obrisati.'}
+        return {greska: true, poruka: 'Optika se ne može obrisati.'}
     })
 }
 
-async function dodaj(oruzje) {
-    return await HttpService.post('/Oruzje', oruzje)
+async function dodaj(optika) {
+    return await HttpService.post('/Optika', optika)
     .then((odgovor)=>{
         return {greska: false, poruka: odgovor.data}
     })
     .catch((e)=>{
-        return {greska: true, poruka: 'Oruzje se ne može dodati!'}
+        return {greska: true, poruka: 'Optika se ne može dodati!'}
     })
 }
 
-async function promjena(sifra,oruzje) {
-    return await HttpService.put('/Oruzje/' + sifra, oruzje)
+async function promjena(sifra,optika) {
+    return await HttpService.put('/Optika/' + sifra, optika)
     .then((odgovor)=>{
         return {greska: false, poruka: odgovor.data}
     })
     .catch((e)=>{
-        return {greska: true, poruka: 'Oruzje se ne može promjeniti!'}
+        return {greska: true, poruka: 'Optika se ne može promjeniti!'}
     })
 }
 

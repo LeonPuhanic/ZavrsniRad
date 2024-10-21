@@ -11,6 +11,7 @@ namespace ZavrsnaAPP.Data
         }
 
         public DbSet<Oruzje> Oruzja { get; set; }
+        public DbSet<Optika> Optike { get; set; }
 
     }
 }

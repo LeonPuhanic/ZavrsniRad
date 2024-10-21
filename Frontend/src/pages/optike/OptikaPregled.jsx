@@ -1,14 +1,14 @@
 import { Button, Container, Table } from "react-bootstrap";
-import OruzjeService from "../../services/OruzjeService";
+import OptikaService from "../../services/OptikaService";
 import { useEffect, useState } from "react";
 import { NumericFormat } from "react-number-format";
 import { Link, useNavigate } from "react-router-dom";
 import { RoutesNames } from "../../constants";
 
 
-export default function OruzjePregled(){
+export default function OptikaPregled(){
 
-    const[oruzja,setOruzja] = useState();
+    const[optike,setOptike] = useState();
 
     const navigate = useNavigate();
 
@@ -16,28 +16,28 @@ export default function OruzjePregled(){
 
 
 
-    async function dohvatiOruzja() {
+    async function dohvatiOptike() {
 
-        await OruzjeService.get()
+        await OptikaService.get()
         .then((odgovor)=>{
             console.log('Vratio se');
             console.log(odgovor);
-            setOruzja(odgovor);
+            setOptike(odgovor);
         })
         .catch((e)=>{console.error(e)});
     }
 
     useEffect(()=>{
-        dohvatiOruzja();
+        dohvatiOptike();
     },[]);
 
     async function obrisiAsync(sifra){
-        const odgovor = OruzjeService.obrisi(sifra);
+        const odgovor = OptikaService.obrisi(sifra);
         if(odgovor.greska){
             alert(odgovor.poruka);
             return;
         }
-        dohvatiOruzja();
+        dohvatiOptike();
     }
 
     function obrisi(sifra){
@@ -47,39 +47,35 @@ export default function OruzjePregled(){
 
     return(
         <Container>
-            <Link to={RoutesNames.ORUZJE_NOVO}>Dodaj novo oružje</Link>
+            <Link to={RoutesNames.OPTIKE_NOVA}>Dodaj novu optiku</Link>
             <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                         <th>Naziv</th>
                         <th>Proizvođać</th>
-                        <th>Kalibar</th>
+                        <th>Magnifikacija</th>
                         <th>Težina</th>
-                        <th>Kapacitet Spremnika</th>
-                        <th>Godina Proizvodnje</th>
                         <th>Cijena</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {oruzja && oruzja.map((oruzje,index)=>(
+                    {optike && optike.map((optika,index)=>(
                         <tr key={index}>
-                            <td>{oruzje.naziv}</td>
-                            <td>{oruzje.proizvodac}</td>
-                            <td>{oruzje.kalibar}</td>
-                            <td>{oruzje.tezina+'g'}</td>
-                            <td>{oruzje.kapacitetspremnika+' kom.'}</td>
-                            <td>{oruzje.godinaproizvodnje+' godine'}</td>
+                            <td>{optika.naziv}</td>
+                            <td>{optika.proizvodac}</td>
+                            <td>{optika.magnifikacija+'x'}</td>
+                            <td>{optika.tezina+'g'}</td>
                             <td>
 
-                                {oruzje.cijena==null
+                                {optika.cijena==null
                                 ? 'Nije definirano'
                                 :
                                 <NumericFormat 
-                                value={oruzje.cijena}
+                                value={optika.cijena}
                                 displayType={'text'}
                                 thousandseperator='.'
                                 decimalseperator=','
-                                prefix={'$'}
+                                prefix={'€'}
                                 decimalScale={2}
                                 fixedDecimalScale
                                 />
@@ -89,13 +85,13 @@ export default function OruzjePregled(){
                             <td>
                             <Button
                                 variant="primary"
-                                onClick={()=>navigate(`/oruzja/${oruzje.sifra}`)}>
+                                onClick={()=>navigate(`/optike/${optika.sifra}`)}>
                                     Promjeni
                                 </Button>
                                 &nbsp; &nbsp;
                                 <Button
                                 variant="danger"
-                                onClick={()=>obrisi(oruzje.sifra )}>
+                                onClick={()=>obrisi(optika.sifra )}>
                                     Obriši
                                 </Button>
                             </td>

@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function OruzjePromjena(){
 
+    const trenutna = new Date().getFullYear();
 
     const navigate = useNavigate();
     const routeParams = useParams();
@@ -25,7 +26,7 @@ export default function OruzjePromjena(){
 
     useEffect(()=>{
         dohvatiOruzje();
-    });
+    },[]);
 
 
     async function promjena(oruzje){
@@ -55,7 +56,7 @@ export default function OruzjePromjena(){
 
     return(
         <Container>
-            Dodavanje novog oružja
+            Promjena oružja
             
             <Form onSubmit={obradiSubmit}>
                 <Form.Group controlId="naziv">
@@ -96,7 +97,7 @@ export default function OruzjePromjena(){
 
                 <Form.Group controlId="godinaproizvodnje">
                     <Form.Label>Godina proizvodnje</Form.Label>
-                    <Form.Control type="number" name="godinaproizvodnje" min={0} max={2200}
+                    <Form.Control type="number" name="godinaproizvodnje" min={0} max={trenutna}
                     defaultValue={oruzje.godinaproizvodnje} />
                 </Form.Group>
 

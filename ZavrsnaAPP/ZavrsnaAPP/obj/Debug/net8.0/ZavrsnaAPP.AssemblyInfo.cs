@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZavrsnaAPP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a385d88dc9635afb8bf1f2b8f59314ec77f06ce")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76fb255de025e32f34fa5fabe7c79db66081361b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZavrsnaAPP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZavrsnaAPP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

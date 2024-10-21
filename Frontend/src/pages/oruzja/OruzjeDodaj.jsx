@@ -7,6 +7,7 @@ import OruzjeService from "../../services/OruzjeService";
 
 export default function OruzjeDodaj(){
 
+    const trenutna = new Date().getFullYear();
 
     const navigate = useNavigate();
 
@@ -72,7 +73,7 @@ export default function OruzjeDodaj(){
 
                 <Form.Group controlId="godinaproizvodnje">
                     <Form.Label>Godina proizvodnje</Form.Label>
-                    <Form.Control type="number" name="godinaproizvodnje" min={0} max={2200} />
+                    <Form.Control type="number" name="godinaproizvodnje" min={0} max={trenutna} />
                 </Form.Group>
 
            <hr />

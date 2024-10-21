@@ -3,7 +3,10 @@ export const RoutesNames = {
     HOME: '/',
     ORUZJE_PREGLED: '/oruzja',
     ORUZJE_NOVO: '/oruzja/dodaj',
-    ORUZJE_PROMJENA: '/oruzja/:sifra'
+    ORUZJE_PROMJENA: '/oruzja/:sifra',
+    OPTIKE_PREGLED: '/optike',
+    OPTIKE_NOVA: '/optike/dodaj',
+    OPTIKE_PROMJENA: '/optike/:sifra'
 
 };
 

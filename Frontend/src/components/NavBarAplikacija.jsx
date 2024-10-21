@@ -19,6 +19,7 @@ export default function NavBarAplikacija() {
             <Nav.Link href="https://lekileon-001-site1.ctempurl.com/swagger/index.html" target="blank">Swagger</Nav.Link>
             <NavDropdown title="Više" id="basic-nav-dropdown">
               <NavDropdown.Item onClick={()=>navigate(RoutesNames.ORUZJE_PREGLED)}>Oruzja</NavDropdown.Item>
+              <NavDropdown.Item onClick={()=>navigate(RoutesNames.OPTIKE_PREGLED)}>Optike</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="https://github.com/LeonPuhanic" target="blank">
                 Github
